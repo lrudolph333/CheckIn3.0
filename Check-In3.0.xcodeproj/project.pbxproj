@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031303A525749B3900636E0B /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031303A425749B3900636E0B /* CheckInViewController.swift */; };
 		60BE6526257482C6006F8816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6525257482C6006F8816 /* AppDelegate.swift */; };
 		60BE6528257482C6006F8816 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6527257482C6006F8816 /* SceneDelegate.swift */; };
 		60BE652A257482C6006F8816 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6529257482C6006F8816 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031303A425749B3900636E0B /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		60BE6522257482C6006F8816 /* Check-In3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-In3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60BE6525257482C6006F8816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60BE6527257482C6006F8816 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				60BE6527257482C6006F8816 /* SceneDelegate.swift */,
 				60BE6529257482C6006F8816 /* ViewController.swift */,
 				60BE652B257482C6006F8816 /* Main.storyboard */,
+				031303A425749B3900636E0B /* CheckInViewController.swift */,
 				60BE652E257482CE006F8816 /* Assets.xcassets */,
 				60BE6530257482CE006F8816 /* LaunchScreen.storyboard */,
 				60BE6533257482CE006F8816 /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				60BE652A257482C6006F8816 /* ViewController.swift in Sources */,
 				60BE6526257482C6006F8816 /* AppDelegate.swift in Sources */,
+				031303A525749B3900636E0B /* CheckInViewController.swift in Sources */,
 				60BE6528257482C6006F8816 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
