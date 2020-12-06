@@ -3,11 +3,16 @@
 
 target 'Check-In3.0' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+    use_frameworks!
 
-  # Pods for Check-In3.0
-# add the Firebase pod for Google Analytics
-pod 'Firebase/Firestore'
+    # Pods for Check-In
+  # add the Firebase pod for Google Analytics
+  pod 'Firebase/Firestore'
+  #pod 'Firebase/Firestore'
+
+  # Optionally, include the Swift extensions if you're using Swift.
+  #pod 'FirebaseFirestoreSwift'
+
 # add pods for any other desired Firebase products
 # https://firebase.google.com/docs/ios/setup#available-pods
 
