@@ -3,7 +3,7 @@
 
 target 'Check-In3.0' do
   # Comment the next line if you don't want to use dynamic frameworks
-    use_frameworks!
+  use_frameworks!
 
     # Pods for Check-In
   # add the Firebase pod for Google Analytics
