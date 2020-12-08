@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		031303A525749B3900636E0B /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031303A425749B3900636E0B /* CheckInViewController.swift */; };
 		600E66CD257C646600C7F96C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 600E66CC257C646600C7F96C /* GoogleService-Info.plist */; };
+		600E66CF257ECB8000C7F96C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E66CE257ECB8000C7F96C /* LoginViewController.swift */; };
 		60BE6526257482C6006F8816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6525257482C6006F8816 /* AppDelegate.swift */; };
 		60BE6528257482C6006F8816 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6527257482C6006F8816 /* SceneDelegate.swift */; };
 		60BE652A257482C6006F8816 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6529257482C6006F8816 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		031303A425749B3900636E0B /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		600E66CC257C646600C7F96C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		600E66CE257ECB8000C7F96C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		60BE6522257482C6006F8816 /* Check-In3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-In3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60BE6525257482C6006F8816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60BE6527257482C6006F8816 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				60BE6525257482C6006F8816 /* AppDelegate.swift */,
 				60BE6527257482C6006F8816 /* SceneDelegate.swift */,
 				60BE6529257482C6006F8816 /* ViewController.swift */,
+				600E66CE257ECB8000C7F96C /* LoginViewController.swift */,
 				60BE652B257482C6006F8816 /* Main.storyboard */,
 				031303A425749B3900636E0B /* CheckInViewController.swift */,
 				60BE652E257482CE006F8816 /* Assets.xcassets */,
@@ -109,6 +112,7 @@
 				60BE651F257482C6006F8816 /* Frameworks */,
 				60BE6520257482C6006F8816 /* Resources */,
 				CF801743C0A58FCD5727D2BD /* [CP] Embed Pods Frameworks */,
+				0280A2C82D1B84A2F0C1CEB9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,6 +171,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0280A2C82D1B84A2F0C1CEB9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Check-In3.0/Pods-Check-In3.0-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Check-In3.0/Pods-Check-In3.0-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Check-In3.0/Pods-Check-In3.0-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		24985A55150C6FA8764FF39E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +237,7 @@
 				60BE652A257482C6006F8816 /* ViewController.swift in Sources */,
 				60BE6526257482C6006F8816 /* AppDelegate.swift in Sources */,
 				031303A525749B3900636E0B /* CheckInViewController.swift in Sources */,
+				600E66CF257ECB8000C7F96C /* LoginViewController.swift in Sources */,
 				60BE6528257482C6006F8816 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
