@@ -47,27 +47,28 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginClick(_ sender: Any) {
         UserDefaults.standard.set(username, forKey: "username")
-        db.collection("users").whereField("username", isEqualTo: username)
+        db.collection("users").whereField("username", isEqualTo: self.usernameFeild.text)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
-                } else {
-                    if (querySnapshot!.isEmpty) {
+                } else if (!querySnapshot!.isEmpty) {
                         print("username taken!")
+                    //Show that username is taken	
                         return
+                } else {
+                    self.ref = self.db.collection("users").addDocument(data: [
+                        "username": self.usernameFeild.text ?? "nousername",
+                        "favorites": []
+                    ]) { err in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                        } else {
+                            print("Document added with ID: \(self.ref!.documentID)")
+                        }
                     }
                 }
         }
-        ref = db.collection("users").addDocument(data: [
-            "username": usernameFeild.text ?? "nousername",
-            "favorites": []
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(self.ref!.documentID)")
-            }
-        }
+
         //Push the new view controller
     }
     /*
