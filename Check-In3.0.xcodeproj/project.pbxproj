@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		031303A525749B3900636E0B /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031303A425749B3900636E0B /* CheckInViewController.swift */; };
+		03190F2E258157990028DA82 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03190F2D258157990028DA82 /* signUpViewController.swift */; };
+		03190F30258157BF0028DA82 /* addPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03190F2F258157BF0028DA82 /* addPostViewController.swift */; };
+		03190F32258157D70028DA82 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03190F31258157D70028DA82 /* profileViewController.swift */; };
+		03190F34258158060028DA82 /* homePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03190F33258158060028DA82 /* homePageViewController.swift */; };
 		600E66CF257ECB8000C7F96C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E66CE257ECB8000C7F96C /* LoginViewController.swift */; };
 		60BE6526257482C6006F8816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6525257482C6006F8816 /* AppDelegate.swift */; };
 		60BE6528257482C6006F8816 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6527257482C6006F8816 /* SceneDelegate.swift */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		031303A425749B3900636E0B /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		03190F2D258157990028DA82 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
+		03190F2F258157BF0028DA82 /* addPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addPostViewController.swift; sourceTree = "<group>"; };
+		03190F31258157D70028DA82 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
+		03190F33258158060028DA82 /* homePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePageViewController.swift; sourceTree = "<group>"; };
 		600E66CE257ECB8000C7F96C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		60BE6522257482C6006F8816 /* Check-In3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-In3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60BE6525257482C6006F8816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +92,10 @@
 				60BE6525257482C6006F8816 /* AppDelegate.swift */,
 				60BE6527257482C6006F8816 /* SceneDelegate.swift */,
 				60BE6529257482C6006F8816 /* ViewController.swift */,
+				03190F2D258157990028DA82 /* signUpViewController.swift */,
+				03190F2F258157BF0028DA82 /* addPostViewController.swift */,
+				03190F31258157D70028DA82 /* profileViewController.swift */,
+				03190F33258158060028DA82 /* homePageViewController.swift */,
 				600E66CE257ECB8000C7F96C /* LoginViewController.swift */,
 				60BE652B257482C6006F8816 /* Main.storyboard */,
 				031303A425749B3900636E0B /* CheckInViewController.swift */,
@@ -230,9 +242,13 @@
 			files = (
 				60BE652A257482C6006F8816 /* ViewController.swift in Sources */,
 				60BE6526257482C6006F8816 /* AppDelegate.swift in Sources */,
+				03190F2E258157990028DA82 /* signUpViewController.swift in Sources */,
+				03190F34258158060028DA82 /* homePageViewController.swift in Sources */,
 				031303A525749B3900636E0B /* CheckInViewController.swift in Sources */,
 				600E66CF257ECB8000C7F96C /* LoginViewController.swift in Sources */,
 				60BE6528257482C6006F8816 /* SceneDelegate.swift in Sources */,
+				03190F32258157D70028DA82 /* profileViewController.swift in Sources */,
+				03190F30258157BF0028DA82 /* addPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
