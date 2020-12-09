@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
+
 
 class CheckInViewController: UIViewController {
-
+    let db = Firestore.firestore()
+    var ref: DocumentReference? = nil
     
     @IBOutlet weak var sleepBtn: UIButton!
     
@@ -94,6 +97,8 @@ class CheckInViewController: UIViewController {
 
     }
  
+    @IBAction func submitClick(_ sender: Any) {
+    }
     
     
     override func viewDidLoad() {

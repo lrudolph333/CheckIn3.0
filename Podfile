@@ -8,10 +8,10 @@ target 'Check-In3.0' do
     # Pods for Check-In
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Firestore'
-  pod 'FirebaseUI'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Analytics'
-  pod 'Firebase/DynamicLinks'
+  #pod 'FirebaseUI'
+  #pod 'Firebase/Auth'
+  #pod 'Firebase/Analytics'
+  #pod 'Firebase/DynamicLinks'
       
   #pod 'Firebase/Firestore'
 
