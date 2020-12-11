@@ -23,11 +23,9 @@ class CheckInViewController: UIViewController {
     
     @IBOutlet weak var anxietyBtn: UIButton!
     
-   
-    
     @IBOutlet weak var depressionBtn: UIButton!
     
-    var sleepPick = false;
+    var sleepPick : Bool = false;
     var academicsPick = false;
     var stressPick = false;
     var anxietyPick = false;
@@ -98,6 +96,21 @@ class CheckInViewController: UIViewController {
     }
  
     @IBAction func submitClick(_ sender: Any) {
+        let storedUserID = UserDefaults.standard.value(forKey: "userID") as? String
+        //db.collection("cities").document("BJ")
+       // ViewController.swift
+
+        /*db
+        .collection("Users")
+            .document(storedUserID!)
+            .updateData([
+                "stats": [
+                            "sleep": FieldValue.increment(Int(NSNumber(value:sleepPick))),
+                            "stress": FieldValue.increment(Int(NSNumber(value:stressPick))),
+                            "academics": FieldValue.increment(Int(NSNumber(value:academicsPick))),
+                            "anxiety": 0,
+                            "depression": 0,
+        ]])*/
     }
     
     

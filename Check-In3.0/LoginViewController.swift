@@ -18,22 +18,21 @@ class LoginViewController: UIViewController {
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
     var username : String?
-
+    var password : String?
     var link: String!
     @IBOutlet weak var usernameFeild: UITextField!
+    @IBOutlet weak var passwordFeild: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.isEnabled = false
+        registerButton.isEnabled = false
 
         // Do any additional setup after loading the view.
         if let storedUsername = UserDefaults.standard.value(forKey: "username") as? String {
             //push the new view controller
-        }
-        if let link = UserDefaults.standard.value(forKey: "Link") as? String {
-          self.link = link
-          loginButton.isEnabled = true
         }
     }
     
@@ -41,35 +40,90 @@ class LoginViewController: UIViewController {
     @IBAction func usernameChanged(_ sender: Any) {
         if let newUsername = usernameFeild.text {
             username = newUsername;
-            loginButton.isEnabled = (newUsername != "");
+            loginButton.isEnabled = (username != "" && password != "");
+            registerButton.isEnabled = (username != "" && password != "");
+
+        }
+    }
+    
+    @IBAction func passwordEdit(_ sender: Any) {
+        if let newPassword = passwordFeild.text {
+            password = newPassword;
+            loginButton.isEnabled = (username != "" && password != "");
+            registerButton.isEnabled = (username != "" && password != "");
         }
     }
     
     @IBAction func loginClick(_ sender: Any) {
-        UserDefaults.standard.set(username, forKey: "username")
+        db.collection("users").whereField("username", isEqualTo: self.usernameFeild.text)
+                   .getDocuments() { (querySnapshot, err) in
+                       if let err = err {
+                           print("Error getting documents: \(err)")
+                       } else if (querySnapshot!.isEmpty) {
+                               print("username not found!")
+                           //Show that username is taken
+                               return
+                       } else {
+                            let data = querySnapshot?.documents[0].data()
+                        //let title = data["title"] as? String ?? ""
+                            let password = data!["password"] as? String ?? ""
+                            if(password != self.password) {
+                                    //show password as inorrect
+                                    print("password incorrect")
+                            }
+                            else {
+                                    //***********************
+                                    //push view controller
+                                    //***********************
+                                    print("access granted")
+                                    UserDefaults.standard.set(self.username, forKey: "username")
+                                    UserDefaults.standard.set(self.ref!.documentID, forKey: "userID")
+                                    //let checkInScreen = CheckInViewController()
+                                    //self.navigationController?.pushViewController(checkInScreen, animated: true)
+                            }
+                       }
+               }
+         
+        //Push the new view controller
+    }
+    
+    
+    @IBAction func registerClick(_ sender: Any) {
         db.collection("users").whereField("username", isEqualTo: self.usernameFeild.text)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else if (!querySnapshot!.isEmpty) {
                         print("username taken!")
-                    //Show that username is taken	
+                    //Show that username is taken
                         return
                 } else {
                     self.ref = self.db.collection("users").addDocument(data: [
-                        "username": self.usernameFeild.text ?? "nousername",
-                        "favorites": []
+                        "username": self.username!,
+                        "password": self.password!,
+                        "favorites": [],
+                        "stats": [
+                            "sleep": 0,
+                            "stress": 0,
+                            "academics": 0,
+                            "anxiety": 0,
+                            "depression": 0,
+                        ]
                     ]) { err in
                         if let err = err {
                             print("Error adding document: \(err)")
                         } else {
                             print("Document added with ID: \(self.ref!.documentID)")
+                            UserDefaults.standard.set(self.username, forKey: "username")
+                            UserDefaults.standard.set(self.ref!.documentID, forKey: "userID")
+                            //***********************
+                            //push view controller
+                            //***********************
                         }
                     }
                 }
         }
 
-        //Push the new view controller
     }
     /*
      @IBOutlet weak var LoginButtonOutlet: UIButton!
