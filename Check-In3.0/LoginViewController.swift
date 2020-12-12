@@ -81,18 +81,7 @@ class LoginViewController: UIViewController {
                                     //push view controller
                                     //***********************
                                     print("access granted")
-                                
-                                //this code was causing error, needs to be looke into
-                                //uncomment soon
-                                /*
-                                    UserDefaults.standard.set(self.username, forKey: "username")
-                                    UserDefaults.standard.set(self.ref!.documentID, forKey: "userID")
- */
-                                
-                                
-                                
-                                
-                                
+
                                     //let checkInScreen = CheckInViewController()
                                     //self.navigationController?.pushViewController(checkInScreen, animated: true)
                             }
