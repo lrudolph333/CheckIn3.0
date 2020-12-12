@@ -20,8 +20,10 @@ class homePageViewController: UIViewController {
         super.viewDidLoad()
         //let pathReference = storage.reference(withPath: "posts/")
         let storageRef = storage.reference()
-        let imagesRef = storageRef.child("posts")
+        //let imagesRef = storageRef.child("posts")
         let db = Firestore.firestore()
+        //gs://check-in3.appspot.com/posts
+        let gsReference = storage.reference(forURL: "gs://check-in3.appspot.com/")
 
         
         var scrollSize = 0
@@ -35,22 +37,11 @@ class homePageViewController: UIViewController {
             } else {
                 for document in querySnapshot!.documents {
                     
+                    var image = UIImage(named: "postImage1")
                     let postData = document.data()
                     let creator = postData["username"] as? String ?? ""
-                    print("\(document.documentID) => \(document.data())")
-                     var imagesRef = storageRef.child("posts/IMG_1391.JPG")
+                    //print("\(document.documentID) => \(document.data())")
 
-                     imagesRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                       if let error = error {
-                         // Uh-oh, an error occurred!
-                       } else {
-                         // Data for "images/island.jpg" is returned
-                         if let stored = UIImage(data: data!) {
-                             image = stored
-                         }
-                         //image = UIImage(data: data!) ?? UIImage(named: "postImage1") as! UIImage
-                       }
-                     }
                         scrollSize = scrollSize + 600
                         //creating the dummy stack view
                         //var y = (500 * index)
@@ -94,10 +85,30 @@ class homePageViewController: UIViewController {
                      else{
                          pic.image = UIImage(named: "postImage2")
                      }*/
-                        pic.image = image
-                        stackV1.addSubview(pic)
+                        //pic.image = image
+              
                         //end of picture
-                        
+                        let imageRef = gsReference.child("IMG_1391.JPG")
+
+                        imageRef.getData(maxSize: 1 * 204800 * 204800) { data, error in
+                          if let error = error {
+                            // Uh-oh, an error occurred!
+                           print("ERror: \(error)")
+                          } else {
+                            // Data for "images/island.jpg" is returned
+                           print("Image before: \(image)")
+
+                            if let stored = UIImage(data: data!) {
+                                image = stored
+                                pic.image = stored
+
+                                print("Image: \(image)")
+                            }
+                            //image = UIImage(data: data!) ?? UIImage(named: "postImage1") as! UIImage
+                          }
+                        }
+                    
+                        stackV1.addSubview(pic)
                         
                         //adding a stack view to hold likes and number of likes
                         let sVFrameX = picFrameX
@@ -152,14 +163,15 @@ class homePageViewController: UIViewController {
                          [wordsLabel .sizeToFit()]
                         stackV1.addSubview(wordsLabel)
                         //end words of aff
-                        
+               
+                    
                         
                         
                         
                         
                         y = y + 600
                     self.scrollV.addSubview(stackV1)
-                        print(scrollSize)
+                        //print(scrollSize)
                     self.scrollV.contentSize = CGSize(width: scrollWidth, height: scrollSize)
                     }
                 }
