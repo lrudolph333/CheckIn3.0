@@ -31,7 +31,7 @@ class homePageViewController: UIViewController {
         var image = UIImage(named: "postImage1")
         var y = 0
         
-        db.collection("users").getDocuments() { (querySnapshot, err) in
+        db.collection("posts").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -39,7 +39,11 @@ class homePageViewController: UIViewController {
                     
                     var image = UIImage(named: "postImage1")
                     let postData = document.data()
-                    let creator = postData["username"] as? String ?? ""
+                    //let creator = postData["creator"] as? String ?? ""
+                    let creator = "creator"
+                    let quote = postData["quote"] as? String ?? "(none)"
+                    let imageURL = postData["image"] as? String ?? ""
+                    let numLikes : Int = postData["likes"] as? Int ?? -1
                     //print("\(document.documentID) => \(document.data())")
 
                         scrollSize = scrollSize + 600
@@ -88,9 +92,11 @@ class homePageViewController: UIViewController {
                         //pic.image = image
               
                         //end of picture
-                        let imageRef = gsReference.child("IMG_1391.JPG")
+                    let httpsReference = self.storage.reference(forURL: imageURL)
+                        
+                        //let imageRef = gsReference.child("IMG_1391.JPG")
 
-                        imageRef.getData(maxSize: 1 * 204800 * 204800) { data, error in
+                        httpsReference.getData(maxSize: 1 * 204800 * 204800) { data, error in
                           if let error = error {
                             // Uh-oh, an error occurred!
                            print("ERror: \(error)")
@@ -141,7 +147,7 @@ class homePageViewController: UIViewController {
                         let likeNumY = buttonY
                         let likeNumW = 100.0
                         let likeNumH = 40.0
-                        let numLikes = 1000000 //this will be changed to a value from the database
+                        //let numLikes = 1000000 //this will be changed to a value from the database
                         let likeFrame = CGRect(x: likeNumX, y: likeNumY, width: CGFloat(likeNumW), height: CGFloat(likeNumH))
                         let likeLabel = UILabel(frame: likeFrame )
                         likeLabel.text = String(numLikes)
@@ -157,10 +163,10 @@ class homePageViewController: UIViewController {
                         let wordsH = frameH * 3
                         let wordsFrame = CGRect(x: wordsX, y: wordsY, width: wordsW, height: wordsH)
                         let wordsLabel = UILabel(frame: wordsFrame)
-                        wordsLabel.text = "test the words of aff to make sure that it works for this assignment and find a way to fill space"
+                        wordsLabel.text = quote
                         wordsLabel.numberOfLines = 0
                         wordsLabel.lineBreakMode = .byWordWrapping;
-                         [wordsLabel .sizeToFit()]
+                         [wordsLabel.sizeToFit()]
                         stackV1.addSubview(wordsLabel)
                         //end words of aff
                

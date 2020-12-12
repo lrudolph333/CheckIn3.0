@@ -33,6 +33,12 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let storedUsername = UserDefaults.standard.value(forKey: "username") as? String {
             //push the new view controller
+            if(true/*They have not checked in today*/) {
+                let initialCheckIn = self.storyboard?.instantiateViewController(withIdentifier: "initialCheckIn") as! ViewController
+                self.navigationController?.pushViewController(initialCheckIn, animated: true)
+            } else {
+                //push home view controller
+            }
         }
     }
     

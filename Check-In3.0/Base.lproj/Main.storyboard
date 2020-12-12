@@ -76,7 +76,6 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="loginClick:" destination="OAB-hT-rNT" eventType="touchUpInside" id="IkX-vF-xrF"/>
-                                    <segue destination="sHQ-Fd-1KZ" kind="presentation" id="YA1-ZI-3aJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,7 +99,7 @@
             <objects>
                 <viewController storyboardIdentifier="initialCheckIn" id="sHQ-Fd-1KZ" customClass="ViewController" customModule="Check_In3_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lj6-nr-1KR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check-IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xja-fQ-fJG">
