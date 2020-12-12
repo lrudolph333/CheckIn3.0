@@ -76,8 +76,8 @@ class LoginViewController: UIViewController {
                                     //push view controller
                                     //***********************
                                     print("access granted")
-                                    UserDefaults.standard.set(self.username, forKey: "username")
-                                    UserDefaults.standard.set(self.ref!.documentID, forKey: "userID")
+                                    //UserDefaults.standard.set(self.username, forKey: "username")
+                                    //UserDefaults.standard.set(self.ref!.documentID, forKey: "userID")
                                     //let checkInScreen = CheckInViewController()
                                     //self.navigationController?.pushViewController(checkInScreen, animated: true)
                             }

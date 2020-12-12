@@ -7,7 +7,9 @@ target 'Check-In3.0' do
 
     # Pods for Check-In
   # add the Firebase pod for Google Analytics
+  pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
+
   #pod 'FirebaseUI'
   #pod 'Firebase/Auth'
   #pod 'Firebase/Analytics'
@@ -16,7 +18,7 @@ target 'Check-In3.0' do
   #pod 'Firebase/Firestore'
 
   # Optionally, include the Swift extensions if you're using Swift.
-  #pod 'FirebaseFirestoreSwift'
+  pod 'FirebaseFirestoreSwift'
 
 # add pods for any other desired Firebase products
 # https://firebase.google.com/docs/ios/setup#available-pods
