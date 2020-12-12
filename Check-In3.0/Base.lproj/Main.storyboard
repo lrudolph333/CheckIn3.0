@@ -97,7 +97,7 @@
         <!--View Controller-->
         <scene sceneID="rtM-f9-0z2">
             <objects>
-                <viewController id="sHQ-Fd-1KZ" customClass="ViewController" customModule="Check_In3_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="initialCheckIn" id="sHQ-Fd-1KZ" customClass="ViewController" customModule="Check_In3_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lj6-nr-1KR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -416,7 +416,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="V6Q-om-5KG">
             <objects>
-                <viewController id="ch0-W5-6rL" customClass="signUpViewController" customModule="Check_In3_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUp" id="ch0-W5-6rL" customClass="signUpViewController" customModule="Check_In3_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sAC-R3-3Mm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
