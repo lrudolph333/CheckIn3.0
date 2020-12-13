@@ -14,6 +14,7 @@
 		03190F34258158060028DA82 /* homePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03190F33258158060028DA82 /* homePageViewController.swift */; };
 		600E66CF257ECB8000C7F96C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E66CE257ECB8000C7F96C /* LoginViewController.swift */; };
 		600E66D9258473F400C7F96C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 600E66D8258473F400C7F96C /* GoogleService-Info.plist */; };
+		600E66DB25869B1900C7F96C /* EverydayCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E66DA25869B1900C7F96C /* EverydayCheckInViewController.swift */; };
 		60BE6526257482C6006F8816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6525257482C6006F8816 /* AppDelegate.swift */; };
 		60BE6528257482C6006F8816 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6527257482C6006F8816 /* SceneDelegate.swift */; };
 		60BE652A257482C6006F8816 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6529257482C6006F8816 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		03190F33258158060028DA82 /* homePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePageViewController.swift; sourceTree = "<group>"; };
 		600E66CE257ECB8000C7F96C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		600E66D8258473F400C7F96C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		600E66DA25869B1900C7F96C /* EverydayCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayCheckInViewController.swift; sourceTree = "<group>"; };
 		60BE6522257482C6006F8816 /* Check-In3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-In3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60BE6525257482C6006F8816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60BE6527257482C6006F8816 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				03190F33258158060028DA82 /* homePageViewController.swift */,
 				600E66CE257ECB8000C7F96C /* LoginViewController.swift */,
 				60BE652B257482C6006F8816 /* Main.storyboard */,
+				600E66DA25869B1900C7F96C /* EverydayCheckInViewController.swift */,
 				031303A425749B3900636E0B /* CheckInViewController.swift */,
 				60BE652E257482CE006F8816 /* Assets.xcassets */,
 				60BE6530257482CE006F8816 /* LaunchScreen.storyboard */,
@@ -243,6 +246,7 @@
 				60BE652A257482C6006F8816 /* ViewController.swift in Sources */,
 				60BE6526257482C6006F8816 /* AppDelegate.swift in Sources */,
 				03190F2E258157990028DA82 /* signUpViewController.swift in Sources */,
+				600E66DB25869B1900C7F96C /* EverydayCheckInViewController.swift in Sources */,
 				03190F34258158060028DA82 /* homePageViewController.swift in Sources */,
 				031303A525749B3900636E0B /* CheckInViewController.swift in Sources */,
 				600E66CF257ECB8000C7F96C /* LoginViewController.swift in Sources */,

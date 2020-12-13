@@ -12,8 +12,9 @@ import Firebase
 
 class CheckInViewController: UIViewController {
     let db = Firestore.firestore()
-    var ref: DocumentReference? = nil
-    
+    //var ref: DocumentReference? = nil
+    var docRef : DocumentReference? = nil
+
     @IBOutlet weak var sleepBtn: UIButton!
     
     
@@ -96,27 +97,27 @@ class CheckInViewController: UIViewController {
     }
  
     @IBAction func submitClick(_ sender: Any) {
-        let storedUserID = UserDefaults.standard.value(forKey: "userID") as? String
+        //let storedUserID = UserDefaults.standard.value(forKey: "userID") as? String
         //db.collection("cities").document("BJ")
        // ViewController.swift
 
-        /*db
-        .collection("Users")
-            .document(storedUserID!)
+            docRef?
             .updateData([
-                "stats": [
-                            "sleep": FieldValue.increment(Int(NSNumber(value:sleepPick))),
-                            "stress": FieldValue.increment(Int(NSNumber(value:stressPick))),
-                            "academics": FieldValue.increment(Int(NSNumber(value:academicsPick))),
-                            "anxiety": 0,
-                            "depression": 0,
-        ]])*/
+                "stats.sleep" : FieldValue.increment(Int64(Int(NSNumber(value:sleepPick)))),
+                "stats.stress" : FieldValue.increment(Int64(Int(NSNumber(value:stressPick)))),
+                "stats.depression" : FieldValue.increment(Int64(Int(NSNumber(value:depressionPick)))),
+                "stats.academics" : FieldValue.increment(Int64(Int(NSNumber(value:academicsPick)))),
+                "stats.anxiety" : FieldValue.increment(Int64(Int(NSNumber(value:anxietyPick)))),
+            ])
+        
+        /*Navigate to Home*/
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        docRef = db.collection("users").document(UserDefaults.standard.value(forKey: "userID") as! String)
         // Do any additional setup after loading the view.
     }
     
