@@ -12,6 +12,10 @@
 		03190F30258157BF0028DA82 /* addPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03190F2F258157BF0028DA82 /* addPostViewController.swift */; };
 		03190F32258157D70028DA82 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03190F31258157D70028DA82 /* profileViewController.swift */; };
 		03190F34258158060028DA82 /* homePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03190F33258158060028DA82 /* homePageViewController.swift */; };
+		4802C3852582F02F00D0DC94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4802C3842582F02F00D0DC94 /* GoogleService-Info.plist */; };
+		4802C3872582F19200D0DC94 /* ResourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802C3862582F19200D0DC94 /* ResourceViewController.swift */; };
+		4802C38B2582F72200D0DC94 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802C38A2582F72200D0DC94 /* Resource.swift */; };
+		4802C391258485A600D0DC94 /* ResourceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802C390258485A600D0DC94 /* ResourceListViewController.swift */; };
 		600E66CF257ECB8000C7F96C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E66CE257ECB8000C7F96C /* LoginViewController.swift */; };
 		600E66D9258473F400C7F96C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 600E66D8258473F400C7F96C /* GoogleService-Info.plist */; };
 		600E66DB25869B1900C7F96C /* EverydayCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E66DA25869B1900C7F96C /* EverydayCheckInViewController.swift */; };
@@ -31,6 +35,10 @@
 		03190F2F258157BF0028DA82 /* addPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addPostViewController.swift; sourceTree = "<group>"; };
 		03190F31258157D70028DA82 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		03190F33258158060028DA82 /* homePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePageViewController.swift; sourceTree = "<group>"; };
+		4802C3842582F02F00D0DC94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4802C3862582F19200D0DC94 /* ResourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceViewController.swift; sourceTree = "<group>"; };
+		4802C38A2582F72200D0DC94 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		4802C390258485A600D0DC94 /* ResourceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListViewController.swift; sourceTree = "<group>"; };
 		600E66CE257ECB8000C7F96C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		600E66D8258473F400C7F96C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		600E66DA25869B1900C7F96C /* EverydayCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayCheckInViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +113,9 @@
 				60BE6530257482CE006F8816 /* LaunchScreen.storyboard */,
 				600E66D8258473F400C7F96C /* GoogleService-Info.plist */,
 				60BE6533257482CE006F8816 /* Info.plist */,
+				4802C3862582F19200D0DC94 /* ResourceViewController.swift */,
+				4802C38A2582F72200D0DC94 /* Resource.swift */,
+				4802C390258485A600D0DC94 /* ResourceListViewController.swift */,
 			);
 			path = "Check-In3.0";
 			sourceTree = "<group>";
@@ -243,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4802C3872582F19200D0DC94 /* ResourceViewController.swift in Sources */,
 				60BE652A257482C6006F8816 /* ViewController.swift in Sources */,
 				60BE6526257482C6006F8816 /* AppDelegate.swift in Sources */,
 				03190F2E258157990028DA82 /* signUpViewController.swift in Sources */,
@@ -250,7 +262,9 @@
 				03190F34258158060028DA82 /* homePageViewController.swift in Sources */,
 				031303A525749B3900636E0B /* CheckInViewController.swift in Sources */,
 				600E66CF257ECB8000C7F96C /* LoginViewController.swift in Sources */,
+				4802C391258485A600D0DC94 /* ResourceListViewController.swift in Sources */,
 				60BE6528257482C6006F8816 /* SceneDelegate.swift in Sources */,
+				4802C38B2582F72200D0DC94 /* Resource.swift in Sources */,
 				03190F32258157D70028DA82 /* profileViewController.swift in Sources */,
 				03190F30258157BF0028DA82 /* addPostViewController.swift in Sources */,
 			);
