@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="815.20000000000005" y="-3.6945812807881775"/>
         </scene>
-        <!--View Controller-->
+        <!--Everyday Check In View Controller-->
         <scene sceneID="rtM-f9-0z2">
             <objects>
-                <viewController storyboardIdentifier="initialCheckIn" id="sHQ-Fd-1KZ" customClass="ViewController" customModule="Check_In3_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="initialCheckIn" id="sHQ-Fd-1KZ" customClass="EverydayCheckInViewController" customModule="Check_In3_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lj6-nr-1KR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,6 +121,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="I'm doing well"/>
                                 <connections>
+                                    <action selector="doingWellClick:" destination="sHQ-Fd-1KZ" eventType="touchUpInside" id="dZT-hs-1gy"/>
                                     <segue destination="Drf-bl-pfU" kind="show" id="kq1-9l-R8f"/>
                                 </connections>
                             </button>
@@ -129,6 +130,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="I'm struggling"/>
                                 <connections>
+                                    <action selector="strugglingClick:" destination="sHQ-Fd-1KZ" eventType="touchUpInside" id="HUx-44-kdO"/>
                                     <segue destination="fJd-nn-sdP" kind="show" id="hrh-dQ-Vrq"/>
                                 </connections>
                             </button>

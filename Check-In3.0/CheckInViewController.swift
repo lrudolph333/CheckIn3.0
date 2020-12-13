@@ -12,6 +12,9 @@ import Firebase
 
 class CheckInViewController: UIViewController {
     let db = Firestore.firestore()
+    //var ref: DocumentReference? = nil
+    var docRef : DocumentReference? = nil
+
     var ref: DocumentReference? = nil
     var sleep = [Resource]()
     var academics = [Resource]()
@@ -141,6 +144,30 @@ class CheckInViewController: UIViewController {
 
     }
  
+    @IBAction func submitClick(_ sender: Any) {
+        //let storedUserID = UserDefaults.standard.value(forKey: "userID") as? String
+        //db.collection("cities").document("BJ")
+       // ViewController.swift
+
+            docRef?
+            .updateData([
+                "stats.sleep" : FieldValue.increment(Int64(Int(NSNumber(value:sleepPick)))),
+                "stats.stress" : FieldValue.increment(Int64(Int(NSNumber(value:stressPick)))),
+                "stats.depression" : FieldValue.increment(Int64(Int(NSNumber(value:depressionPick)))),
+                "stats.academics" : FieldValue.increment(Int64(Int(NSNumber(value:academicsPick)))),
+                "stats.anxiety" : FieldValue.increment(Int64(Int(NSNumber(value:anxietyPick)))),
+            ])
+        
+        /*Navigate to Home*/
+        
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        docRef = db.collection("users").document(UserDefaults.standard.value(forKey: "userID") as! String)
+        // Do any additional setup after loading the view.
+    }
     @IBAction func generalClick(_ sender: Any) {
         if(generalPick == false){
             generalButton.backgroundColor = UIColor.systemGray5;
@@ -173,7 +200,7 @@ class CheckInViewController: UIViewController {
         academics.append(Resource(name: "Perfectionism Informational Flyer", link: "https://students.wustl.edu/wp-content/uploads/2020/09/Perfectionism.pdf", information: "Strategies for Overcoming Perfectionism"))
         academics.append(Resource(name: "Academic Mentoring", link: "https://learningcenter.wustl.edu/academic-programs/help-with-courses/", information: "Matched mentoring provides supplemental learning."))
         academics.append(Resource(name: "Different Academic Programs", link: "https://learningcenter.wustl.edu/academic-programs/academic-program-types/", information: "Types of academic programs offered at The Learning Center"))
-            
+           
     }
     func setSressArray(){
         stress.append(Resource(name: "Stress Informational Flyer", link: "https://students.wustl.edu/wp-content/uploads/2020/09/Stress.pdf", information: "Stress is a natural and inevitable part of life. Depending on how we deal with stress, it can help or hinder us. Our goal is to learn how to manage and harness stress."))
