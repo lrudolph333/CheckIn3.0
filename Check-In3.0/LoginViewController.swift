@@ -78,7 +78,8 @@ class LoginViewController: UIViewController {
                                     print("password incorrect")
                             }
                             else {
-                                
+                                UserDefaults.standard.set(self.username, forKey: "username")
+                                UserDefaults.standard.set(self.ref!.documentID, forKey: "userID")
                                 
                                 let initialCheckIn = self.storyboard?.instantiateViewController(withIdentifier: "initialCheckIn") as! ViewController
                                 
