@@ -50,6 +50,7 @@ class CheckInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                docRef = db.collection("users").document(UserDefaults.standard.value(forKey: "userID") as! String)
         // Do any additional setup after loading the view.
         setSleepArray()
         setAnxietyArray()
@@ -163,11 +164,6 @@ class CheckInViewController: UIViewController {
     }
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        docRef = db.collection("users").document(UserDefaults.standard.value(forKey: "userID") as! String)
-        // Do any additional setup after loading the view.
-    }
     @IBAction func generalClick(_ sender: Any) {
         if(generalPick == false){
             generalButton.backgroundColor = UIColor.systemGray5;
@@ -182,6 +178,7 @@ class CheckInViewController: UIViewController {
             }
             generalPick = false;
         }
+    }
         
    
     func setSleepArray(){
