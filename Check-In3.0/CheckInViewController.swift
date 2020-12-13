@@ -33,9 +33,10 @@ class CheckInViewController: UIViewController {
    
     @IBOutlet weak var generalButton: UIButton!
     
+
     @IBOutlet weak var depressionBtn: UIButton!
     
-    var sleepPick = false;
+    var sleepPick : Bool = false;
     var academicsPick = false;
     var stressPick = false;
     var anxietyPick = false;
@@ -155,10 +156,6 @@ class CheckInViewController: UIViewController {
             generalPick = false;
         }
         
-    }
-    @IBAction func submitClick(_ sender: Any) {
-
-    }
    
     func setSleepArray(){
         sleep.append(Resource(name: "Sleep Informational Flyer", link: "https://students.wustl.edu/wp-content/uploads/2020/09/Sleep-Flyer-final.pdf", information: "Flyer containing information about healthy sleep"))

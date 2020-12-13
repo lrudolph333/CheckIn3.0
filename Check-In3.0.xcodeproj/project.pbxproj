@@ -17,6 +17,7 @@
 		4802C38B2582F72200D0DC94 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802C38A2582F72200D0DC94 /* Resource.swift */; };
 		4802C391258485A600D0DC94 /* ResourceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802C390258485A600D0DC94 /* ResourceListViewController.swift */; };
 		600E66CF257ECB8000C7F96C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E66CE257ECB8000C7F96C /* LoginViewController.swift */; };
+		600E66D9258473F400C7F96C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 600E66D8258473F400C7F96C /* GoogleService-Info.plist */; };
 		60BE6526257482C6006F8816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6525257482C6006F8816 /* AppDelegate.swift */; };
 		60BE6528257482C6006F8816 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6527257482C6006F8816 /* SceneDelegate.swift */; };
 		60BE652A257482C6006F8816 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BE6529257482C6006F8816 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		4802C38A2582F72200D0DC94 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		4802C390258485A600D0DC94 /* ResourceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListViewController.swift; sourceTree = "<group>"; };
 		600E66CE257ECB8000C7F96C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		600E66D8258473F400C7F96C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		60BE6522257482C6006F8816 /* Check-In3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-In3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60BE6525257482C6006F8816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60BE6527257482C6006F8816 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 				031303A425749B3900636E0B /* CheckInViewController.swift */,
 				60BE652E257482CE006F8816 /* Assets.xcassets */,
 				60BE6530257482CE006F8816 /* LaunchScreen.storyboard */,
-				4802C3842582F02F00D0DC94 /* GoogleService-Info.plist */,
+				600E66D8258473F400C7F96C /* GoogleService-Info.plist */,
 				60BE6533257482CE006F8816 /* Info.plist */,
 				4802C3862582F19200D0DC94 /* ResourceViewController.swift */,
 				4802C38A2582F72200D0DC94 /* Resource.swift */,
@@ -194,7 +196,7 @@
 			files = (
 				79A6B31B2581537100BD9BD0 /* .gitignore in Resources */,
 				60BE6532257482CE006F8816 /* LaunchScreen.storyboard in Resources */,
-				4802C3852582F02F00D0DC94 /* GoogleService-Info.plist in Resources */,
+				600E66D9258473F400C7F96C /* GoogleService-Info.plist in Resources */,
 				60BE652F257482CE006F8816 /* Assets.xcassets in Resources */,
 				60BE652D257482C6006F8816 /* Main.storyboard in Resources */,
 			);
