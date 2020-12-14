@@ -16,7 +16,8 @@ class EverydayCheckInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
+        navigationItem.leftBarButtonItem = backButton
         docRef = db.collection("users").document(UserDefaults.standard.value(forKey: "userID") as! String)
         print("UserID: \(docRef?.documentID)")
         // Do any additional setup after loading the view.

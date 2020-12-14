@@ -18,7 +18,9 @@ class homePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: navViewController.self, action: nil)
+        navigationItem.leftBarButtonItem = backButton
+        //self.navigationItem.hidesBackButton = true
         //self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
 
         //let pathReference = storage.reference(withPath: "posts/")
@@ -133,37 +135,15 @@ class homePageViewController: UIViewController {
                         
                         
                         //setting up like button
-                        let buttonX = likeView.bounds.origin.x
-                        let buttonY = likeView.bounds.origin.y + 5
-                        let buttonW = 60.0
-                        let buttonH = 40.0
-                        //let buttonFrame = CGRect(x: buttonX, y: buttonY, width: buttonW, height: buttonH)
-                        let buttonFrame = CGRect(x: buttonX, y: buttonY, width: CGFloat(buttonW), height: CGFloat(buttonH))
                         
-                        let likeButton = UIButton(frame: buttonFrame)
-                        let buttonImage = UIImage(named: "likeButton")
-                        likeButton.setBackgroundImage(buttonImage, for: .normal)
-                        likeButton.addTarget(self, action: #selector(self.likePressed), for: .touchUpInside)
-                        likeView.addSubview(likeButton)
+                        //let buttonFrame = CGRect(x: buttonX, y: buttonY, width: buttonW, height: buttonH)
+
                         //end of adding like button
                         
-                        //setting up the like number
-                        let likeNumX = buttonX + CGFloat(buttonW) + 5
-                        let likeNumY = buttonY
-                        let likeNumW = 100.0
-                        let likeNumH = 40.0
-                        //let numLikes = 1000000 //this will be changed to a value from the database
-                        let likeFrame = CGRect(x: likeNumX, y: likeNumY, width: CGFloat(likeNumW), height: CGFloat(likeNumH))
-                        let likeLabel = UILabel(frame: likeFrame )
-                        likeLabel.text = String(numLikes)
-                        likeView.addSubview(likeLabel)
-                        // end of adding like num
-                        stackV1.addSubview(likeView)
-                        // end of like view
                         
                         //start words of aff
                         let wordsX = sVFrameX
-                        let wordsY = sVFrameY + sVFrameH
+                        let wordsY = sVFrameY
                         let wordsW = sVFrameW
                         let wordsH = frameH * 3
                         let wordsFrame = CGRect(x: wordsX, y: wordsY, width: wordsW, height: wordsH)

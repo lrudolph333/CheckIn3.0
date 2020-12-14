@@ -26,6 +26,7 @@ class profileViewController: UIViewController {
 
        override func viewDidLoad() {
            super.viewDidLoad()
+        userName.text = UserDefaults.standard.value(forKey: "username") as? String
             var scrollSize = 0;
                var scrollWidth = 0
                 var y = 0
@@ -146,32 +147,11 @@ class profileViewController: UIViewController {
                                                       let buttonW = 60.0
                                                       let buttonH = 40.0
                                                       //let buttonFrame = CGRect(x: buttonX, y: buttonY, width: buttonW, height: buttonH)
-                                                      let buttonFrame = CGRect(x: buttonX, y: buttonY, width: CGFloat(buttonW), height: CGFloat(buttonH))
-                                                      
-                                                      let likeButton = UIButton(frame: buttonFrame)
-                                                      let buttonImage = UIImage(named: "likeButton")
-                                                      likeButton.setBackgroundImage(buttonImage, for: .normal)
-                                                      likeButton.addTarget(self, action: #selector(self.likePressed), for: .touchUpInside)
-                                                      likeView.addSubview(likeButton)
-                                                      //end of adding like button
-                                                      
-                                                      //setting up the like number
-                                                      let likeNumX = buttonX + CGFloat(buttonW) + 5
-                                                      let likeNumY = buttonY
-                                                      let likeNumW = 100.0
-                                                      let likeNumH = 40.0
-                                                      //let numLikes = 1000000 //this will be changed to a value from the database
-                                                      let likeFrame = CGRect(x: likeNumX, y: likeNumY, width: CGFloat(likeNumW), height: CGFloat(likeNumH))
-                                                      let likeLabel = UILabel(frame: likeFrame )
-                                                      likeLabel.text = String(numLikes)
-                                                      likeView.addSubview(likeLabel)
-                                                      // end of adding like num
-                                                      stackV1.addSubview(likeView)
-                                                      // end of like view
+                                          
                                                       
                                                       //start words of aff
                                                       let wordsX = sVFrameX
-                                                      let wordsY = sVFrameY + sVFrameH
+                                                      let wordsY = sVFrameY 
                                                       let wordsW = sVFrameW
                                                       let wordsH = frameH * 3
                                                       let wordsFrame = CGRect(x: wordsX, y: wordsY, width: wordsW, height: wordsH)
@@ -206,9 +186,9 @@ class profileViewController: UIViewController {
        }
        
        
-       
+       /*
        @IBAction func postValChanged(_ sender: Any) {
-           
+           /*
            if(postType.selectedSegmentIndex == 1){
                 self.scrollV.subviews.forEach({ $0.removeFromSuperview() }) // this gets things done
 
@@ -392,7 +372,7 @@ class profileViewController: UIViewController {
                     //}
             }
             
-           }
+           }*/
            else if(postType.selectedSegmentIndex == 0){
                //this case is for My Likes
                //need to get posts from database
@@ -590,5 +570,6 @@ class profileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+ */
 
 }

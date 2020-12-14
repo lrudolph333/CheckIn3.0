@@ -29,6 +29,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         loginButton.isEnabled = false
         registerButton.isEnabled = false
+        
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: navViewController.self, action: nil)
+        navigationItem.leftBarButtonItem = backButton
 
         // Do any additional setup after loading the view.
         if let storedUsername = UserDefaults.standard.value(forKey: "username") as? String {
