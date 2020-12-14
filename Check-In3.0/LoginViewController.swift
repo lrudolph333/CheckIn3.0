@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     /*@IBOutlet weak var sendEmailButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!*/
     let db = Firestore.firestore()
-    var ref: DocumentReference? = nil
+    var ref : DocumentReference? = nil
     var username : String?
     var password : String?
     var link: String!
@@ -33,12 +33,30 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let storedUsername = UserDefaults.standard.value(forKey: "username") as? String {
             //push the new view controller
-            if(true/*They have not checked in today*/) {
-                let initialCheckIn = self.storyboard?.instantiateViewController(withIdentifier: "initialCheckIn") as! ViewController
-                self.navigationController?.pushViewController(initialCheckIn, animated: true)
-            } else {
-                //push home view controller
+            ref = db.collection("users").document(UserDefaults.standard.value(forKey: "userID") as! String)
+            //Calculating current day, vs last check in day
+            let date = Date()
+            let calendar = Calendar.current
+            let today = calendar.component(.day, from: date)
+            print("Today: \(today)");
+            
+            ref?.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let lastDate = document.data()?["lastCheckInDate"] as? Date
+                    let lastDay = calendar.component(.day, from: lastDate ?? date)
+                    print("Last day: \(lastDay)")
+                    if(lastDay != today) {
+                        //push the check in view controller
+                        let initialCheckIn = self.storyboard?.instantiateViewController(withIdentifier: "initialCheckIn") as! EverydayCheckInViewController
+                        self.navigationController?.pushViewController(initialCheckIn, animated: true)
+                    } else {
+                        //push home view controller
+                    }
+                } else {
+                    print("Document does not exist")
+                }
             }
+
         }
     }
     
@@ -68,6 +86,9 @@ class LoginViewController: UIViewController {
                        } else if (querySnapshot!.isEmpty) {
                                print("username not found!")
                            //Show that username is taken
+                                let alert = UIAlertController(title: "Error", message: "Username not found", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                                self.present(alert, animated: true)
                                return
                        } else {
                             let data = querySnapshot?.documents[0].data()
@@ -76,12 +97,15 @@ class LoginViewController: UIViewController {
                             if(password != self.password) {
                                     //show password as inorrect
                                     print("password incorrect")
+                                    let alert = UIAlertController(title: "Error", message: "Password is incorrect", preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                                    self.present(alert, animated: true)
                             }
                             else {
                                 UserDefaults.standard.set(self.username, forKey: "username")
-                                UserDefaults.standard.set(self.ref!.documentID, forKey: "userID")
+                                UserDefaults.standard.set(querySnapshot?.documents[0].documentID, forKey: "userID")
                                 
-                                let initialCheckIn = self.storyboard?.instantiateViewController(withIdentifier: "initialCheckIn") as! ViewController
+                                let initialCheckIn = self.storyboard?.instantiateViewController(withIdentifier: "initialCheckIn") as! EverydayCheckInViewController
                                 
                                 self.navigationController?.pushViewController(initialCheckIn, animated: true)
                                     //***********************
@@ -106,7 +130,10 @@ class LoginViewController: UIViewController {
                     print("Error getting documents: \(err)")
                 } else if (!querySnapshot!.isEmpty) {
                         print("username taken!")
-                    //Show that username is taken
+                        //Show that username is taken
+                        let alert = UIAlertController(title: "Error", message: "Username is taken.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                        self.present(alert, animated: true)
                         return
                 } else {
                     self.ref = self.db.collection("users").addDocument(data: [
@@ -131,9 +158,10 @@ class LoginViewController: UIViewController {
                             //push view controller
                             //***********************
                             //added push vc
-                            let signUp = self.storyboard?.instantiateViewController(withIdentifier: "signUp") as! signUpViewController
+
+                            let initialCheckIn = self.storyboard?.instantiateViewController(withIdentifier: "initialCheckIn") as! EverydayCheckInViewController
                             
-                            self.navigationController?.pushViewController(signUp, animated: true)
+                            self.navigationController?.pushViewController(initialCheckIn, animated: true)
                             
                             
                         }
