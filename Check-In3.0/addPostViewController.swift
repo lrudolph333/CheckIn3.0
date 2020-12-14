@@ -93,6 +93,7 @@ class addPostViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print("Error writing document: \(err)")
             } else {
                 print("Document successfully written!")
+                //homePageViewController.viewDidLoad(<#T##self: homePageViewController##homePageViewController#>)
             }
         }    }
     

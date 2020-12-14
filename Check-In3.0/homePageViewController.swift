@@ -18,6 +18,9 @@ class homePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
+
         //let pathReference = storage.reference(withPath: "posts/")
         let storageRef = storage.reference()
         //let imagesRef = storageRef.child("posts")
@@ -28,10 +31,12 @@ class homePageViewController: UIViewController {
         
         var scrollSize = 0
         var scrollWidth = 0
-        var image = UIImage(named: "postImage1")
+        //var image = UIImage(named: "postImage1")
         var y = 0
         
-        db.collection("posts").getDocuments() { (querySnapshot, err) in
+        db.collection("posts")
+            .order(by: "timestamp", descending: false).limit(to: 12)
+            .getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -39,8 +44,8 @@ class homePageViewController: UIViewController {
                     
                     var image = UIImage(named: "postImage1")
                     let postData = document.data()
-                    //let creator = postData["creator"] as? String ?? ""
-                    let creator = "creator"
+                    let creator = postData["creator"] as? String ?? ""
+                    //let creator = "creator"
                     let quote = postData["quote"] as? String ?? "(none)"
                     let imageURL = postData["image"] as? String ?? ""
                     let numLikes : Int = postData["likes"] as? Int ?? -1
@@ -56,7 +61,7 @@ class homePageViewController: UIViewController {
                         // end of initializing stack view
                         
                         
-                    scrollWidth = Int(self.scrollV.bounds.width)
+                        scrollWidth = Int(self.scrollV.bounds.width)
                         
                         
                         //adding title lavel
