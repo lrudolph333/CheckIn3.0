@@ -33,27 +33,31 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let storedUsername = UserDefaults.standard.value(forKey: "username") as? String {
             //push the new view controller
-            ref = db.collection("users").document(UserDefaults.standard.value(forKey: "userID") as! String)
-            //Calculating current day, vs last check in day
-            let date = Date()
-            let calendar = Calendar.current
-            let today = calendar.component(.day, from: date)
-            print("Today: \(today)");
-            
-            ref?.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let lastDate = document.data()?["lastCheckInDate"] as? Date
-                    let lastDay = calendar.component(.day, from: lastDate ?? date)
-                    print("Last day: \(lastDay)")
-                    if(lastDay != today) {
-                        //push the check in view controller
-                        let initialCheckIn = self.storyboard?.instantiateViewController(withIdentifier: "initialCheckIn") as! EverydayCheckInViewController
-                        self.navigationController?.pushViewController(initialCheckIn, animated: true)
+            if let storedUserID = UserDefaults.standard.value(forKey: "userID") as? String {
+                ref = db.collection("users").document(storedUserID)
+                //Calculating current day, vs last check in day
+                let date = Date()
+                let calendar = Calendar.current
+                let today = calendar.component(.day, from: date)
+                print("Today: \(today)");
+                
+                ref?.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        let lastDate = document.data()?["lastCheckInDate"] as? Date
+                        let lastDay = calendar.component(.day, from: lastDate ?? date)
+                        print("Last day: \(lastDay)")
+                        if(lastDay != today) {
+                            //push the check in view controller
+                            let initialCheckIn = self.storyboard?.instantiateViewController(withIdentifier: "initialCheckIn") as! EverydayCheckInViewController
+                            self.navigationController?.pushViewController(initialCheckIn, animated: true)
+                        } else {
+                            //push home view controller
+                            let homeScreen = self.storyboard?.instantiateViewController(withIdentifier: "homeTabController") as! UITabBarController
+                            self.navigationController?.pushViewController(homeScreen, animated: true)
+                        }
                     } else {
-                        //push home view controller
+                        print("Document does not exist")
                     }
-                } else {
-                    print("Document does not exist")
                 }
             }
 
