@@ -52,6 +52,8 @@ class LoginViewController: UIViewController {
                             self.navigationController?.pushViewController(initialCheckIn, animated: true)
                         } else {
                             //push home view controller
+                            let homeScreen = self.storyboard?.instantiateViewController(withIdentifier: "homeTabController") as! UITabBarController
+                            self.navigationController?.pushViewController(homeScreen, animated: true)
                         }
                     } else {
                         print("Document does not exist")

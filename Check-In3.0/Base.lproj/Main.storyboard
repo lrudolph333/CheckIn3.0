@@ -274,7 +274,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J3U-eM-Ma6" id="Wfh-ag-EgD" customClass="ResourceTableViewCell" customModule="Check_In3_0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="1.1920928955078125e-07"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2wd-HB-PjI">
@@ -342,7 +342,7 @@
         <!--Home-->
         <scene sceneID="Mfp-Hr-tT0">
             <objects>
-                <viewController id="bxn-o3-77f" customClass="homePageViewController" customModule="Check_In3_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homepage" id="bxn-o3-77f" customClass="homePageViewController" customModule="Check_In3_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tdn-6q-llv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -377,7 +377,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="9aX-tN-vud">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Drf-bl-pfU" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="homeTabController" automaticallyAdjustsScrollViewInsets="NO" id="Drf-bl-pfU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Mx5-Ka-MGx"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rrg-GJ-HfH">
